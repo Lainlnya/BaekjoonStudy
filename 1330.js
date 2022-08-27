@@ -16,4 +16,4 @@ rl.on("close", () => {
     else if (input[0] == input[1]) console.log("==");
 
     process.exit();
-})
+});

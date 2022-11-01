@@ -4,12 +4,19 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
+
 let input = [];
 
 rl.on("line", (line) => {
-    input.push(parseInt(line));
+    input.push(line);
 });
 
 rl.on("close", () => {
-    console.log(input[0] + input[1]);
+    let result = '';
+    input.shift();
+    input = input.sort((a, b) => a - b);
+    input.forEach((element) => {
+        result += `${element}\n`; 
+    });
+    console.log(result);
 });
